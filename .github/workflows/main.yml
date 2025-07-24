@@ -14,21 +14,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Flutter (3.22.1 with Dart 3.5.1)
+      - name: Install Flutter 3.22.1
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.22.1'  # ✅ This version comes with Dart 3.5.1
+          flutter-version: '3.22.1'
           channel: stable
           cache: true
 
-      - name: Flutter Version Check
+      - name: Check Flutter & Dart Version
         run: flutter --version
 
-      - name: Get Dependencies
+      - name: Run flutter pub get
         run: flutter pub get
 
-      - name: Analyze Code
+      - name: Run analysis
         run: flutter analyze
 
-      - name: Run Tests
+      - name: Run tests
         run: flutter test

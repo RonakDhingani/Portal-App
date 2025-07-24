@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "64809963800",
+    "project_id": "inexture-1",
+    "storage_bucket": "inexture-1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:64809963800:android:f6b8a1c561814e33bc4e6d",
+        "android_client_info": {
+          "package_name": "com.example.inexture_portal_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAArwAOQPMZVvz7YZlDhcf-IUDFptjP_Jk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,1 @@
+/home/root411/Flutter Project/inexture_portal_app/mobile-app/build/app/intermediates/cxx/Debug/i1t312s2/obj/arm64-v8a

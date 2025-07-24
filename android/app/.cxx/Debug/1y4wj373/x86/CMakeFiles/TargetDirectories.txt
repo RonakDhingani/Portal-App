@@ -1,0 +1,2 @@
+/home/root411/Flutter Project/inexture_portal_app/mobile-app/android/app/.cxx/Debug/1y4wj373/x86/CMakeFiles/edit_cache.dir
+/home/root411/Flutter Project/inexture_portal_app/mobile-app/android/app/.cxx/Debug/1y4wj373/x86/CMakeFiles/rebuild_cache.dir

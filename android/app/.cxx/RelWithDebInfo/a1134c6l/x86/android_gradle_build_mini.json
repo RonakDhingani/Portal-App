@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "/home/root411/snap/flutter/common/flutter/packages/flutter_tools/gradle/src/main/groovy/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/home/root411/Android/Sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/home/root411/Flutter Project/inexture_portal_app/mobile-app/android/app/.cxx/RelWithDebInfo/a1134c6l/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/home/root411/Android/Sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/home/root411/Flutter Project/inexture_portal_app/mobile-app/android/app/.cxx/RelWithDebInfo/a1134c6l/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}

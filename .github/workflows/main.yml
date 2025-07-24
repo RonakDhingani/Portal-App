@@ -24,16 +24,16 @@ jobs:
       - name: Disable analytics
         run: flutter config --no-analytics --no-cli-animations
 
-      - name: Show Flutter version
+      - name: Show versions
         run: flutter --version
 
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Analyze code
+      - name: Analyze
         run: flutter analyze
 
-      - name: Run tests with coverage
+      - name: Run tests
         run: flutter test --coverage
 
       - name: Build release APK

@@ -1,0 +1,48 @@
+name: Flutter CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  flutter-ci:
+    name: Flutter Build, Analyze, Test, and APK
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Flutter SDK
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.30.0-1.0.pre.426'
+          
+      # Step 3: Install Flutter dependencies
+      - name: Install dependencies
+        run: flutter pub get
+
+      # Step 4: Analyze Dart code for errors/warnings
+      - name: Analyze project source
+        run: flutter analyze
+
+      # Step 5: Run all unit/widget tests
+      - name: Run tests
+        run: flutter test
+
+      # Step 6: Build debug APK
+      - name: Build APK (debug)
+        run: flutter build apk --debug
+
+      # Step 7: Upload built APK to GitHub Actions artifacts
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-apk
+          path: build/app/outputs/flutter-apk/app-debug.apk

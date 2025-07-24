@@ -12,37 +12,39 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout source code
-      - name: Checkout code
+      - name: Checkout source code
         uses: actions/checkout@v4
 
-      # Step 2: Set up Flutter (>=3.22.0 includes Dart >= 3.5.2)
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.22.1'  # ✅ Change to exact or latest if needed
+      # ⬇️ Manually install Flutter from master channel
+      - name: Clone Flutter from master branch
+        run: |
+          git clone https://github.com/flutter/flutter.git -b master
+          echo "$GITHUB_WORKSPACE/flutter/bin" >> $GITHUB_PATH
 
-      # Step 3: Disable analytics (optional, but avoids first-run output)
-      - name: Disable analytics
+      - name: Disable Flutter analytics
         run: flutter config --no-analytics --no-cli-animations
 
-      # Step 4: Install dependencies
+      - name: Enable master channel (just in case)
+        run: flutter channel master
+
+      - name: Upgrade Flutter to latest master version
+        run: flutter upgrade
+
+      - name: Check Flutter version
+        run: flutter --version
+
       - name: Install dependencies
         run: flutter pub get
 
-      # Step 5: Analyze Dart code
-      - name: Analyze code
+      - name: Analyze Dart code
         run: flutter analyze
 
-      # Step 6: Run unit/widget tests
       - name: Run tests
         run: flutter test
 
-      # Step 7: Build debug APK
       - name: Build APK
         run: flutter build apk --debug
 
-      # Step 8: Upload APK as artifact
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:

@@ -9,40 +9,37 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install Flutter via beta channel
+      - name: Install Flutter
         uses: subosito/flutter-action@v2
         with:
-          channel: beta
           flutter-version: '3.22.0'
+          channel: stable
           cache: true
 
-      - name: Pin to Flutter 3.23 pre-release
-        run: |
-          cd $FLUTTER_ROOT
-          git fetch --tags
-          git checkout 3.23.0-0.1.pre
-          flutter --version
-
-      - name: Disable analytics (optional)
+      - name: Disable analytics
         run: flutter config --no-analytics --no-cli-animations
+
+      - name: Show Flutter version
+        run: flutter --version
 
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Analyze
+      - name: Analyze code
         run: flutter analyze
 
-      - name: Run tests
+      - name: Run tests with coverage
         run: flutter test --coverage
 
-      - name: Build APK Release
+      - name: Build release APK
         run: flutter build apk --release
 
-      - name: Upload APK
+      - name: Upload release APK
         uses: actions/upload-artifact@v4
         with:
           name: app-release.apk

@@ -7,33 +7,27 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  flutter_test:
+    name: Test and Analyze
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout repo
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      # Setup Flutter with specific version
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.30.0-1.0.pre.426'
-          channel: master
+          channel: master  # You can change to: stable | beta | dev if needed
 
-      # Enable flutter commands
-      - name: Flutter Doctor
-        run: flutter doctor -v
+      - name: Flutter version info
+        run: flutter --version
 
-      # Get dependencies
-      - name: Install Dependencies
+      - name: Install dependencies
         run: flutter pub get
 
-      # Run analysis (only on lib/ and test/ to avoid noise)
-      - name: Analyze Code
-        run: flutter analyze lib test
+      - name: Analyze project source
+        run: flutter analyze
 
-      # Run unit tests
-      - name: Run Tests
+      - name: Run unit tests
         run: flutter test

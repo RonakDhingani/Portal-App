@@ -423,9 +423,9 @@
     },
     {
       "name": "flutter_lints",
-      "rootUri": "file:///home/root411/.pub-cache/hosted/pub.dev/flutter_lints-5.0.0",
+      "rootUri": "file:///home/root411/.pub-cache/hosted/pub.dev/flutter_lints-4.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.1"
     },
     {
       "name": "flutter_localizations",
@@ -777,9 +777,9 @@
     },
     {
       "name": "lints",
-      "rootUri": "file:///home/root411/.pub-cache/hosted/pub.dev/lints-5.1.1",
+      "rootUri": "file:///home/root411/.pub-cache/hosted/pub.dev/lints-4.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.6"
+      "languageVersion": "3.1"
     },
     {
       "name": "local_auth",
@@ -1520,7 +1520,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2025-07-24T11:04:05.736990Z",
+  "generated": "2025-07-24T11:43:01.321117Z",
   "generator": "pub",
   "generatorVersion": "3.8.0-133.0.dev",
   "flutterRoot": "file:///home/root411/fvm/cache.git",

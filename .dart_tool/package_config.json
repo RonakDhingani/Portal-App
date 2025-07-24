@@ -363,7 +363,7 @@
     },
     {
       "name": "flutter",
-      "rootUri": "file:///home/root411/fvm/cache.git/packages/flutter",
+      "rootUri": "file:///home/root411/snap/flutter/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
@@ -423,13 +423,13 @@
     },
     {
       "name": "flutter_lints",
-      "rootUri": "file:///home/root411/.pub-cache/hosted/pub.dev/flutter_lints-2.0.3",
+      "rootUri": "file:///home/root411/.pub-cache/hosted/pub.dev/flutter_lints-5.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.5"
     },
     {
       "name": "flutter_localizations",
-      "rootUri": "file:///home/root411/fvm/cache.git/packages/flutter_localizations",
+      "rootUri": "file:///home/root411/snap/flutter/packages/flutter_localizations",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
@@ -549,13 +549,13 @@
     },
     {
       "name": "flutter_test",
-      "rootUri": "file:///home/root411/fvm/cache.git/packages/flutter_test",
+      "rootUri": "file:///home/root411/snap/flutter/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
     {
       "name": "flutter_web_plugins",
-      "rootUri": "file:///home/root411/fvm/cache.git/packages/flutter_web_plugins",
+      "rootUri": "file:///home/root411/snap/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
@@ -777,9 +777,9 @@
     },
     {
       "name": "lints",
-      "rootUri": "file:///home/root411/.pub-cache/hosted/pub.dev/lints-2.1.1",
+      "rootUri": "file:///home/root411/.pub-cache/hosted/pub.dev/lints-5.1.1",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.6"
     },
     {
       "name": "local_auth",
@@ -1185,7 +1185,7 @@
     },
     {
       "name": "sky_engine",
-      "rootUri": "file:///home/root411/fvm/cache.git/bin/cache/pkg/sky_engine",
+      "rootUri": "file:///home/root411/snap/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
@@ -1517,13 +1517,12 @@
       "name": "inexture",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "3.4"
+      "languageVersion": "3.8"
     }
   ],
-  "generated": "2025-07-24T10:34:09.369708Z",
   "generator": "pub",
-  "generatorVersion": "3.8.0-133.0.dev",
-  "flutterRoot": "file:///home/root411/fvm/cache.git",
-  "flutterVersion": "3.30.0-1.0.pre.426",
+  "generatorVersion": "3.8.1",
+  "flutterRoot": "file:///home/root411/snap/flutter",
+  "flutterVersion": "3.32.6",
   "pubCache": "file:///home/root411/.pub-cache"
 }

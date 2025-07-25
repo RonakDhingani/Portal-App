@@ -10,22 +10,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - name: Set up Flutter
+      - name: Install Flutter from master channel
         uses: subosito/flutter-action@v2
         with:
           channel: master
-          flutter-version: '3.30.0'  # nearest supported version
+          flutter-version: 'master' # temporary base version
 
-      - name: Checkout exact Flutter version tag/commit
+      - name: Checkout exact Flutter version
         run: |
           cd $FLUTTER_ROOT
           git fetch --tags
-          git checkout 842db35d27  # exact version you need
+          git checkout 842db35d27
+          flutter doctor
           flutter --version
 
-      - run: flutter config --no-analytics
-      - run: flutter pub get
-      - run: flutter test
-      - run: flutter build apk --release
+      - name: Disable analytics
+        run: flutter config --no-analytics
+
+      - name: Get Dependencies
+        run: flutter pub get
+
+      - name: Run Tests
+        run: flutter test
+
+      - name: Build APK
+        run: flutter build apk --release

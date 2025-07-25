@@ -1,21 +1,24 @@
-    name: Flutter CI
-
-    on:
-      push:
-        branches:
-          - main
-
-    jobs:
-      build:
-        runs-on: ubuntu-latest
-
-        steps:
-        - uses: actions/checkout@v4
-
-        - uses: subosito/flutter-action@v2 # Use a specific version, e.g., v2
-          with:
-            flutter-version: '3.22.2' # Specify the desired Flutter version
-
-        - run: flutter pub get
-        - run: flutter test
-        - run: flutter build apk --release # Example build command
+name: Flutter CI
+ 
+on:
+  push:
+    branches:
+      - main
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - uses: actions/checkout@v4
+ 
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'master' # or use 'beta' or a known working version
+          flutter-version: '3.30.0-1.0.pre.426' # Match your local version (optional)
+ 
+      - run: flutter --version
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test
+      - run: flutter build apk --release

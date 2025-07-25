@@ -1,24 +1,31 @@
 name: Flutter CI
- 
+
 on:
   push:
     branches:
       - main
- 
+
 jobs:
   build:
     runs-on: ubuntu-latest
- 
+
     steps:
       - uses: actions/checkout@v4
- 
-      - uses: subosito/flutter-action@v2
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
         with:
-          channel: 'master' # or use 'beta' or a known working version
-          flutter-version: '3.30.0-1.0.pre.426' # Match your local version (optional)
- 
-      - run: flutter --version
+          channel: master
+          flutter-version: '3.30.0'  # nearest supported version
+
+      - name: Checkout exact Flutter version tag/commit
+        run: |
+          cd $FLUTTER_ROOT
+          git fetch --tags
+          git checkout 842db35d27  # exact version you need
+          flutter --version
+
+      - run: flutter config --no-analytics
       - run: flutter pub get
-      - run: flutter analyze
       - run: flutter test
       - run: flutter build apk --release

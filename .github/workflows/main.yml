@@ -1,49 +1,21 @@
-name: Flutter CI
+    name: Flutter CI
 
-on:
-  push:
-    branches: [main]
-  pull_request:
+    on:
+      push:
+        branches:
+          - main
 
-jobs:
-  build:
-    name: Build Flutter App
-    runs-on: ubuntu-latest
+    jobs:
+      build:
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+        steps:
+        - uses: actions/checkout@v4
 
-      - name: Install Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.22.2'  # ✅ includes Dart 3.5.0
-          channel: stable
-          cache: true
+        - uses: subosito/flutter-action@v2 # Use a specific version, e.g., v2
+          with:
+            flutter-version: '3.22.2' # Specify the desired Flutter version
 
-      - name: Disable analytics
-        run: flutter config --no-analytics --no-cli-animations
-
-      - name: Show Flutter version
-        run: flutter --version
-        
-      - name: Show Dart version     # ✅ This is the new step
-        run: dart --version
-        
-      - name: Install dependencies
-        run: flutter pub get
-
-      - name: Analyze
-        run: flutter analyze
-
-      - name: Run tests
-        run: flutter test
-
-      - name: Build APK
-        run: flutter build apk --release
-
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: app-release.apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+        - run: flutter pub get
+        - run: flutter test
+        - run: flutter build apk --release # Example build command
